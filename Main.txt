@@ -1,0 +1,65 @@
+
+
+_G.ver = "b0.0.1"
+
+if _G.ver == "b0.0.1" then
+    if game.PlaceId == 5535087806 then
+
+    game:StarterGui:SetCore("SendNotification", {
+        Title = "Tapping Mania GUI";
+        Text = "Loaded!\nMade By: sys67#9015";
+    })
+
+
+    local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/UI-Librarys/main/Finity%20UI%20Lib"))();
+    local window = lib.new(true, "Tapping Mania");
+    local Functions = window:Category("Functions");
+    local Misc = Functions:Sector("Misc");
+    local Credits = Functions:Sector("Credits");
+    _G.autotap = false;
+    _G.autoreb = false;
+
+    local autotap = Misc:Cheat("CheckBox","AutoTap", function(bool)
+        _G.autotap = bool;
+    end, {})
+
+    local autoreb = Misc:Cheat("CheckBox","AutoRebirth", function(bool)
+        _G.autoreb = bool;
+    end, {})
+
+    Credits:Cheat("Label","Scripter: sys67#9015", function() end, {})
+    Credits:Cheat("Label","Library: github.com/bloodball", function() end, {})
+    Misc:Cheat("Label","Wersion: ".._G.ver, function() end, {})
+
+
+    while wait() do
+        if _G.autotap == true then
+            game:GetService("ReplicatedStorage").RemoteEvents.Click:FireServer()
+        end
+        if _G.autoreb == true then
+            game:GetService("ReplicatedStorage").RemoteEvents.Rebirth:FireServer(
+                unpack(
+                    {
+                        [1] = 1
+                    }
+                )
+            )
+        end
+    end
+
+    else
+
+    game:StarterGui:SetCore("SendNotification", {
+        Title = "Tapping Mania GUI";
+        Text = "Game Is Not Supported!";
+    })
+
+    end
+else
+
+    game:StarterGui:SetCore("SendNotification", {
+        Title = "Tapping Mania GUI";
+        Text = "You Have A Older Version!\nCheck A GitHub Repo.";
+    })
+
+end
