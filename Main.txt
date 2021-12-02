@@ -11,7 +11,7 @@ if _G.ver == "b0.0.1" then
     })
 
 
-    local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/UI-Librarys/main/Finity%20UI%20Lib"))();
+    local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/sys67/tapping_mania/main/FinityUI.txt"))();
     local window = lib.new(true, "Tapping Mania");
     local Functions = window:Category("Functions");
     local Misc = Functions:Sector("Misc");
