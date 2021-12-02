@@ -1,6 +1,6 @@
 
 
-_G.ver = "b0.0.1"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/sys67/tapping_mania/main/Version.txt"))();--imports wersion
 
 if _G.ver == "b0.0.1" then
     if game.PlaceId == 5535087806 then
